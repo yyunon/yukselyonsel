@@ -1,13 +1,11 @@
 <template>
-  <header :class="{'scrolled-nav': scrollPosition}">
+  <header class="{'scrolled-nav': scrollPosi:tion}">
     <nav>
-      <div class="empty">
-      </div>
       <ul v-show="!mobile" class="navigation">
-        <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
-        <li><router-link class="link" :to="{name: 'Home'}">Experience</router-link></li>
-        <li><router-link class="link" :to="{name: 'Home'}">Projects</router-link></li>
-        <li><router-link class="link" :to="{name: 'Home'}">Misc</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyHome'}">About</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
       </ul>
     </nav>
   </header>
@@ -16,10 +14,10 @@
   </div>
   <transition name="mobile-nav">
       <ul v-show="mobileNav" class="dropdown-nav">
-        <li><router-link class="link" :to="{name: 'Home'}">Home</router-link></li>
-        <li><router-link class="link" :to="{name: 'Home'}">Experience</router-link></li>
-        <li><router-link class="link" :to="{name: 'Home'}">Projects</router-link></li>
-        <li><router-link class="link" :to="{name: 'Home'}">Misc</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyHome'}">About</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
       </ul>
   </transition>
 </template>
@@ -30,8 +28,8 @@
     data() {
       return {
         scrollPosition: null,
-        mobile:true,
-        mobileNav:true,
+        mobile:null,
+        mobileNav:null,
         windowWidth:null,
       };
     },
@@ -44,21 +42,17 @@ header {
   background-color: rgba(0,0,0,0.8);
   z-index: 99;
   width: 100%;
-  position: fixed;
   transition: .5s ease all;
   color: #fff;
 
   nav {
     display: flex;
-    position: relative;
     flex-direction: row;
-    padding: 12px 0;
+    padding: 0;
     transition: .5s ease all;
     width: 90%;
-    margin: 0 auto;
-    @media(min-width: 1140px) {
-      max-width: 1140px;
-    }
+    margin: auto auto;
+    justify-content: center;
 
     ul,
     .link {
@@ -66,6 +60,7 @@ header {
       color: #fff;
       list-style: none;
       text-decoration:none;
+      text-align: center;
     }
 
     li {
@@ -78,7 +73,6 @@ header {
       font-size: 14px;
       transition: .5s ease all;
       padding-bottom: 4px;
-      border-bottom: 1px solid transparent;
 
       &:hover {
         color: #00afea;
@@ -89,8 +83,6 @@ header {
     .navigation {
       display: flex;
       align-items: center;
-      flex: 1;
-      justify-content: flex-end;
     }
     .icon {
       display: flex;
