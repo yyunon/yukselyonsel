@@ -1,13 +1,8 @@
 <template>
   <div class="mycontact">
-    <div class="hero-text container">
-      <h4>Posts</h4>
-      <hr />
       <p>
-      I am a software engineer.
+      Please feel free to contact to me for inquiries on 
       </p>
-      <hr />
-    </div>
   </div>
 </template>
 
@@ -22,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.myhome {
+.mycontact {
   display: flex;
   width: 100%;
   justify-content: center;

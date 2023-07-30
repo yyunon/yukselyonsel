@@ -3,6 +3,7 @@ import MyHome from "../views/MyHome.vue";
 import MyProjects from "../views/MyProjects.vue";
 import MyBlog from "../views/MyBlog.vue";
 import MyContact from "../views/MyContact.vue";
+import MyCv from "../views/MyCv.vue";
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
       path:"/contact",
       name: "MyContact",
       component: MyContact,
+    },
+    {
+      path:"/vc",
+      name: "MyCv",
+      component: MyCv,
     },
 ];
 

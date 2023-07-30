@@ -6,6 +6,7 @@
         <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
         <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
         <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyCv'}">CV</router-link></li>
       </ul>
     </nav>
   </header>
@@ -18,6 +19,7 @@
         <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
         <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
         <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyCv'}">CV</router-link></li>
       </ul>
   </transition>
 </template>
@@ -50,7 +52,7 @@ header {
     flex-direction: row;
     padding: 0;
     transition: .5s ease all;
-    width: 90%;
+    width: 100%;
     margin: auto auto;
     justify-content: center;
 
@@ -75,30 +77,14 @@ header {
       padding-bottom: 4px;
 
       &:hover {
-        color: #00afea;
-        border-color: #00afea;
+        color: #cc9999;
+        border-color: #cc9999;
       }
     }
 
     .navigation {
       display: flex;
       align-items: center;
-    }
-    .icon {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      right: 24px;
-      height: 100%;
-      i {
-        cursor: pointer;
-        font-size: 24px;
-        transition: .8s ease all;
-      }
-    }
-    .icon-active {
-      transform: rotate(180deg);
     }
   }
 }
