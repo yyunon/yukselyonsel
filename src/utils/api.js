@@ -9,10 +9,10 @@ const apiClient = axios.create({
 
 const events = {
   async get(path) {
-    return apiClient.get('/markdowns/'+path)
+    return apiClient.get(path)
   },
   async post(path) {
-    return apiClient.post('/markdowns/'+path)
+    return apiClient.post(path)
   }
 }
 

@@ -1,5 +1,8 @@
 <template>
   <div class="header">
+    <router-link class="link" :to="{name: 'MyHome'}">
+      <img src="../assets/pineapple.png" @onrender="rotate" @mouseover="rotate" @click="rotate" class="transition" v-bind:style="{transform: `rotate(${img_degree}deg)`}" >
+    </router-link>
     <p class="name">Y&uuml;ksel Y&ouml;nsel</p>
     <p class="whoami">Software Engineer, Data Enthusiast</p>
     <div class="icons">
@@ -16,6 +19,16 @@
 <script>
 export default {
   name: 'MyHeadline',
+  data() {
+    return {
+      img_degree: 0,
+    }
+  },
+  methods: {
+    rotate() {
+      this.img_degree += 360;
+    }
+  }
 }
 </script>
 
@@ -27,7 +40,16 @@ export default {
     align-items: center;
     justify-content: center;
     padding-top: 30px;
-
+    
+    .transition {
+      transition: transform 0.5s ease-in-out;
+    }
+    img {
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      
+    }
     .name {
       font-size: 20px;
       font-weight: bold;

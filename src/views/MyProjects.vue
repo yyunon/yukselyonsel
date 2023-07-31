@@ -8,9 +8,9 @@
       </p>
       <hr />
       <h5>Exploring the limits of query pushdown for SQL Acceleration on FPGAs</h5>
-      <div>
+      <div class="project-container">
         <div class="sectionHeader" v-on:click="toggleSection">
-          This project is done in ABS group in TU Delft, mainly focusing on accelerating big data applications on heterogeneous, homogeneous and future-proof systems. 
+          This project is done in ABS group in TU Delft, mainly focusing on accelerating big data applications on heterogeneous, homogeneous and future-proof systems... 
         </div>
         <div class="sectionBody" v-show="showSection">
         FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using. You can find the rest of my thesis on here. 
@@ -65,5 +65,9 @@ export default {
   display: flex;
   width: 100%;
   justify-content: center;
+
+  .project-container{
+    cursor: pointer;
+  }
 }
 </style>

@@ -7,7 +7,7 @@ import MyCv from "../views/MyCv.vue";
 
 const routes = [
     {
-      path:"/about",
+      path:"/",
       name: "MyHome",
       component: MyHome,
     },
