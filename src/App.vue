@@ -1,26 +1,47 @@
 <template>
-  <title>"This is title"</title>
-  <HelloWorld msg="Coming soon..."/>
+  <div class="app">
+    <div class="intro">
+      <MyHeadline/>
+    </div>
+    <div class="navbar">
+      <MyNav/>
+    </div>
+    <div class="view">
+      <router-view/>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MyNav from "./components/MyNav"
+import MyHeadline from "./components/MyHeadline"
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MyNav,
+    MyHeadline,
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .intro {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+  .navbar {
+    width: 50%;
+    margin: auto;
+  }
+  .view {
+    width: 50%;
+    margin: auto;
+  }
 }
 </style>

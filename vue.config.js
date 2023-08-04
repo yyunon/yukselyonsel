@@ -1,5 +1,10 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  publicPath: process.env.NODE_ENV === "production" ? "/yyunon.github.io/" : "/",
-  transpileDependencies: true
+  publicPath: "/",
+  transpileDependencies: true,
+  runtimeCompiler: true,
+  devServer: {
+    proxy: 'http://localhost:9090/api',
+    https: true,
+  }
 })
