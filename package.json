@@ -17,6 +17,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",
+    "cors": "^2.8.5",
     "dompurify": "^3.0.5",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",

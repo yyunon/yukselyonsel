@@ -5,8 +5,8 @@
         <li><router-link class="link" :to="{name: 'MyHome'}">About</router-link></li>
         <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
         <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
-        <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
         <li><router-link class="link" :to="{name: 'MyCv'}">CV</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
       </ul>
     </nav>
   </header>
@@ -18,8 +18,8 @@
         <li><router-link class="link" :to="{name: 'MyHome'}">About</router-link></li>
         <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
         <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
-        <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
         <li><router-link class="link" :to="{name: 'MyCv'}">CV</router-link></li>
+        <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
       </ul>
   </transition>
 </template>
@@ -42,6 +42,7 @@
 
 header {
   background-color: rgba(0,0,0,0.8);
+  border-radius: 10px;
   z-index: 99;
   width: 100%;
   transition: .5s ease all;

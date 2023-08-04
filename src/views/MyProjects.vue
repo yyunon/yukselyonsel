@@ -1,39 +1,8 @@
 <template>
   <div class="myprojects">
-    <div class="hero-text container">
-      <h4>Projects</h4>
-      <hr />
-      <p>
-      I enjoy using new frameworks and languages while trying to reinvent the wheel.
-      </p>
-      <hr />
-      <h5>Exploring the limits of query pushdown for SQL Acceleration on FPGAs</h5>
-      <div class="project-container">
-        <div class="sectionHeader" v-on:click="toggleSection">
-          This project is done in ABS group in TU Delft, mainly focusing on accelerating big data applications on heterogeneous, homogeneous and future-proof systems... 
-        </div>
-        <div class="sectionBody" v-show="showSection">
-        FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using. You can find the rest of my thesis on here. 
-        </div>
-      </div>
-      <hr />
-      <h5>Is Deep Image Prior reproducible?</h5>
-      <p>
-      </p>
-      <hr />
-      <h5>Architectural Analysis of Ludwig</h5>
-      <p>
-      </p>
-      <hr />
-      <h5>Terminal Editor written in Rust</h5>
-      <p>
-      </p>
-      <hr />
-      <h5>www.yukselyonsel.com</h5>
-      <p>
-      This website is also one of my projects to play with frontend components and get lost in UI/UX design. The website is written with Vue3.
-      </p>
-      <hr />
+    <div class="container">
+      <MyProject v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
+      <MyProject v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
       <p>
         Please check my Github for the rest of my contributions and projects!
       </p>
@@ -43,6 +12,8 @@
 
 <script>
 // @ is an alias to /src
+import MyProject from "../components/MyProject.vue"
+import {iconFactory} from "../utils/iconFactory.js"
 
 export default {
   name: "MyProjects",
@@ -53,8 +24,29 @@ export default {
   },
   data() {
     return {
-      showSection: false,
     }
+  },
+  components: {
+    MyProject,
+  },
+  computed: {
+      fpgaProject() {
+        return {
+          header: "Exploring the limits of query pushdown for SQL Acceleration on FPGAs",
+          sectionBody: 
+            `This project is done in ABS group in TU Delft, mainly focusing on accelerating big data applications on heterogeneous, homogeneous and future-proof systems. FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using. You can find the rest of my thesis on here.`,
+          icons: [iconFactory.cpp, iconFactory.cmake, iconFactory.c, iconFactory.amazonwebservices, iconFactory.python]
+        }
+      },
+      yukselyonseldotcomProject() {
+        return {
+          header: "yukselyonsel.com",
+          sectionBody: 
+            `This website is also one of my projects to play with frontend components and get lost in UI/UX design. The frontend is written with Vue3. Moreover, I do run a server on google cloud and the backend is completely written in Rust.
+            `,
+          icons: [iconFactory.vuejs, iconFactory.javascript, iconFactory.rust, iconFactory.googlecloud]
+        }
+      },
   }
 };
 </script>
@@ -65,9 +57,5 @@ export default {
   display: flex;
   width: 100%;
   justify-content: center;
-
-  .project-container{
-    cursor: pointer;
-  }
 }
 </style>

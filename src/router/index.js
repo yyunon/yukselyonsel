@@ -20,6 +20,9 @@ const routes = [
       path:"/blog",
       name: "MyBlog",
       component: MyBlog,
+      children: [
+
+      ]
     },
     {
       path:"/contact",

@@ -1,26 +1,23 @@
 <template>
-  <div class="content-container">
-    <div class="container" v-show="!blogView">
-      <a href="#" class="click-div" @click="changeState('blog.id')">
+  <div class="content-container" v-show='($store.state.PageState == "blogView")'>
+    <a href="#" class="click-div" @click="changeStateWithView(blog)">
+    <div class="blog-container" v-show='($store.state.PageState == "blogView")'>
         <div class="content">
-          <img class="logo" src="blog.logoImagePath">
+          <img class="logo" :src="blog.logoImagePath">
           <h3> {{ blog.title }}</h3>
         </div>
-      </a>
     </div>
-    <div class="post" v-show="blogView">
-      <MyMdRenderer :source="blog.content"/>
-    </div>
+    </a>
   </div>
 </template>
 
 <script>
-import MyMdRenderer from "../components/MyMdRenderer.vue"
+import {PageStateE} from "../store/index.js"
 import events from "../utils/api.js"
 
 export default {
   name: 'MyContent',
-  props: ['blogI'],
+  props: ['contentIndex', 'blogI'],
   data() {
     return {
       blog: {
@@ -32,48 +29,52 @@ export default {
         createdAt: "",
         logoImagePath: "",
       },
+      imgURL: null,
     }
   },
   components: {
-    MyMdRenderer,
   },
   methods: {
-    changeState(postId) {
-      this.blogView = !this.blogView;
-      this.postId = postId;
+    async changeStateWithView(blog) {
+      this.$store.commit({type: 'changePageState', state: PageStateE.ContentView });
+      const b = await this.fetchBlogData(blog.id);
+      this.$store.commit({type: 'updateBlogUnderView', blog: b});
+      this.$store.commit({type: 'updateContentTypeUnderView', contentType: blog.contentType});
     },
-    async getBlog(blogI) {
+    async fetchBlogData(blogI) {
       try {
-        const response = await events.get("/markdowns/" + blogI.id)
-        this.blog = response.data;
-        console.log(this.blog)
+        const response = await events.get('/markdowns/' + blogI + '/content')
+        if (response.status == 200) {
+          return response.data;
+        }
       } catch(err) {
         console.log(err);
       }
     },
-    async fetchGitImage() {
-      const getBase64Image = async res => {
-        const blob = await res.blob();
-      }
-    }
   },
   created() {
-    this.blog = this.blogI;
-    this.getBlog(this.blog);
+    this.blog = this.blogI
   },
+  async mounted() {
+  }
 }
 </script>
 
 <style lang="scss">
-  .container {
+.content-container {
+  animation: slide-in .5s;
+  animation-delay: calc(.5s + v-bind('contentIndex'));
+  animation-fill-mode: backwards;
+
+  .blog-container {
     margin-top: 0;
+    margin-right: 10px;
     padding-top: 5px;
-    width: 33%;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-    border: double 2px;
+    border: 1px;
     border-image-slice: 1;
     border-style: solid;
-    border-color: #cc9999;
+    border-color: white;
 
     
     .content {
@@ -97,4 +98,24 @@ export default {
       max-width: 100%;
     }
   }
+
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.25;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+img {
+  display: block;
+  height: 200px;
+  margin: auto;
+  max-width: 100%;
+}
 </style>
