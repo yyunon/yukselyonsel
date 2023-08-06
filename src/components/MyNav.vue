@@ -5,7 +5,6 @@
         <li><router-link class="link" :to="{name: 'MyHome'}">About</router-link></li>
         <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
         <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
-        <li><router-link class="link" :to="{name: 'MyCv'}">CV</router-link></li>
         <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
       </ul>
     </nav>
@@ -18,7 +17,6 @@
         <li><router-link class="link" :to="{name: 'MyHome'}">About</router-link></li>
         <li><router-link class="link" :to="{name: 'MyProjects'}">Projects</router-link></li>
         <li><router-link class="link" :to="{name: 'MyBlog'}">Blog</router-link></li>
-        <li><router-link class="link" :to="{name: 'MyCv'}">CV</router-link></li>
         <li><router-link class="link" :to="{name: 'MyContact'}">Contact</router-link></li>
       </ul>
   </transition>
