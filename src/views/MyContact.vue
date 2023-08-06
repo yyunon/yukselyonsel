@@ -2,7 +2,7 @@
   <div class="mycontact">
     <div class="contact-me">
       <div>
-        <h3>Please feel free to reach out me via </h3>
+        <h3>Please feel free to reach out to me via </h3>
       </div>
         <div class="icons">
           <a href="https://www.linkedin.com/in/yukselyonsel" class="link" target="_blank">

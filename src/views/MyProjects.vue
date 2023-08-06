@@ -1,8 +1,8 @@
 <template>
   <div class="myprojects">
     <div class="container">
-      <MyProject v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
-      <MyProject v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
+      <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
+      <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
       <p>
         Please check my Github for the rest of my contributions and projects!
       </p>
