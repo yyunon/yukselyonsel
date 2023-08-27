@@ -1,11 +1,11 @@
 <template>
-  <div class="myprojects">
+  <div class="myprojects m-5">
+      <p>
+        Below, you can see the chosen projects of my mine. Please check my Github for the rest of my contributions and projects!
+      </p>
     <div class="container">
       <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
       <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
-      <p>
-        Please check my Github for the rest of my contributions and projects!
-      </p>
     </div>
   </div>
 </template>
@@ -33,8 +33,17 @@ export default {
       fpgaProject() {
         return {
           header: "Exploring the limits of query pushdown for SQL Acceleration on FPGAs",
+          sectionSummary: 
+            `
+            This project is done in ABS group in TU Delft, mainly focusing on accelerating big data applications on heterogeneous, homogeneous and future-proof systems.
+            `,
           sectionBody: 
-            `This project is done in ABS group in TU Delft, mainly focusing on accelerating big data applications on heterogeneous, homogeneous and future-proof systems. FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using. You can find the rest of my thesis on here.`,
+            `
+              <p>FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using.<p>
+              <div>
+                In this project, I have worked on several different repositories.
+              </div>
+            `,
           icons: [iconFactory.cpp, iconFactory.cmake, iconFactory.c, iconFactory.amazonwebservices, iconFactory.python]
         }
       },

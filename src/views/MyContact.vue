@@ -26,7 +26,7 @@
         <span class="user-text" v-show='formState == "successful-post" || formState == "message-sent" || formState == "invalid-post" ' style="font-size: 16pt;"> {{ userMessage }}</span>
       </div>
       </div>
-        <img src="/assets/IMG_20221231_100906.jpg">
+        <img class="hidden sm:block" src="/assets/IMG_20221231_100906.jpg">
   </div>
 </template>
 
@@ -87,7 +87,7 @@ export default {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: center;
+  //justify-content: center;
   .icons {
     .git {
       padding-top: 5px;
@@ -98,8 +98,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 20px;
-    width: 50%;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     font-style: inherit;
     .contact-me-form {
@@ -173,10 +171,15 @@ export default {
     }
   }
   img {
+    margin-top: 0;
     margin: 20px;
     border-radius: 10px;
-    max-width: 263px;
-    max-height: 387px;
+    height: auto;
+    object-fit: contain;
+    max-width: 20%;
+    max-height: 100%;
+    //min-width: 263px;
+    //min-height: 387px;
   }
 }
 </style>

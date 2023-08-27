@@ -19,6 +19,7 @@ const store = createStore({
         createdAt: "",
         logoImagePath: "",
       },
+      mobile: false,
     }
   },
   mutations: {
@@ -33,6 +34,9 @@ const store = createStore({
     },
     updateContentTypeUnderView(state, payload) {
       state.contentTypeUnderView = payload.contentType
+    },
+    updateMobileState(state, payload) {
+      state.mobile = payload.mobile
     },
   },
   actions: {

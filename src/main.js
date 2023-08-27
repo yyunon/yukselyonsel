@@ -6,11 +6,12 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 import "@/assets/global.css"
+import './index.css'
 
 /* import font awesome icon component */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLinkedin, faGithub, faRust, faVuejs } from '@fortawesome/free-brands-svg-icons'
+import { faLinkedin, faGithub, faRust, faVuejs} from '@fortawesome/free-brands-svg-icons'
 
 library.add(faLinkedin)
 library.add(faGithub)

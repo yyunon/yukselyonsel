@@ -19,6 +19,7 @@
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "dompurify": "^3.0.5",
+    "gl-matrix": "^3.4.3",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.6.7",
@@ -42,10 +43,13 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
+    "autoprefixer": "^10.4.15",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "node-sass": "^9.0.0",
-    "volar-service-vetur": "latest" 
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3",
+    "volar-service-vetur": "latest"
   },
   "eslintConfig": {
     "root": true,

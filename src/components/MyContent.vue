@@ -1,6 +1,6 @@
 <template>
-  <div class="content-container" v-show='($store.state.PageState == "blogView")'>
-    <a href="#" class="click-div" @click="changeStateWithView(blog)">
+  <div class="w-80 animation:slide-in" v-show='($store.state.PageState == "blogView")'>
+    <a href="#" class="click-div remove-style-hrefs" @click="changeStateWithView(blog)">
     <div class="blog-container" v-show='($store.state.PageState == "blogView")'>
         <div class="content">
           <img class="logo" :src="blog.logoImagePath">
@@ -65,16 +65,16 @@ export default {
   animation: slide-in .5s;
   animation-delay: calc(.5s + v-bind('contentIndex'));
   animation-fill-mode: backwards;
+  width: 33rem;
+  height: auto;
 
   .blog-container {
     margin-top: 0;
     margin-right: 10px;
     padding-top: 5px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+    box-shadow: 2px 2px 2px rgba(131, 131, 131, 0.7);
     border: 1px;
     border-image-slice: 1;
-    border-style: solid;
-    border-color: white;
 
     
     .content {
@@ -87,18 +87,22 @@ export default {
       height: 100%;
       text-decoration: none;
     }
-    a {
-      color:inherit;
-      text-decoration:inherit;
-    }
     img {
       display: block;
       height:100%;
       margin: auto;
       max-width: 100%;
     }
+    &:hover {
+      box-shadow: none;
+      transition: .3s ease all;
+    }
   }
 
+}
+.remove-style-hrefs {
+  color:inherit;
+  text-decoration:none;
 }
 
 @keyframes slide-in {
@@ -112,10 +116,4 @@ export default {
   }
 }
 
-img {
-  display: block;
-  height: 200px;
-  margin: auto;
-  max-width: 100%;
-}
 </style>
