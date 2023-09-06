@@ -1,25 +1,29 @@
 <template>
-  <div class="blobintro" v-show='($store.state.PageState == "blogView")'>
-    <p>Welcome to the workspace that I host my writings. Please don't my mind typos that much as this is my first intro to posting my writings...</p>
-  </div>
-  <div class="hline" v-show='($store.state.PageState == "blogView")'></div>
-  <div class="myblog">
-    <div class="content-bookmark">
-      <font-awesome-icon icon="fa-solid fa-bars" />
-      <ul class="content-type-div">
-        <li v-for="item of contentTypes" :key="item.contentType">
-          <a href='#' style="text-decoration: none; color: inherit;" @click="changeContentTypeWithView(item.contentType)">
+  <div class="flex flex-col mx-5 w-full font-ralewaysans">
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" >
+    <div class="font-extralight text-5xl text-center" >
+      <h1>On the Blog</h1>
+    </div>
+
+    <div class="inline-flex flex-row justify-between pt-5 p-1" >
+        <div class="font-light m-auto" v-for="item of contentTypes" :key="item.contentType">
+          <a href='#' class="no-underline" @click="changeContentTypeWithView(item.contentType)">
             {{ item.contentType }}
           </a>
-        </li>
-      </ul>
+        </div>
     </div>
-    <div class="contentboxcontainer">
-      <div class="contentbox" v-for="(x, index) in blogs" :key="index" v-show='($store.state.PageState == "blogView") && ((x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All"))'>
-        <MyContent v-bind:contentIndex="index" v-bind:blogI="x"/>
-      </div>
-      <div class="post" v-show='($store.state.PageState == "contentView")'>
-        <MyMdRenderer :source='blogUnderView.content' v-if="blogUnderView"/>
+
+    <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700 my-2" v-show='($store.state.PageState == "blogView")'>
+
+    <div v-show="error">
+      Sorry :(, server is down. Please try again in 30 min.
+    </div>
+
+    <div class="flex">
+      <div class="flex flex-col md:flex-row w-full">
+        <div class="flex md:flex-row" v-for="(x, index) in blogs" :key="index" v-show='(x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All")' >
+          <MyContentCard v-bind:contentIndex="index" v-bind:blogI="x"/>
+        </div>
       </div>
     </div>
   </div>
@@ -27,8 +31,7 @@
 
 <script>
 // @ is an alias to /src
-import MyMdRenderer from "../components/MyMdRenderer.vue"
-import MyContent from "../components/MyContent.vue"
+import MyContentCard from "../components/MyContentCard.vue"
 import {PageStateE} from "../store/index.js"
 import events from "../utils/api.js"
 
@@ -44,9 +47,14 @@ export default {
       },
       contentTypes: [],
       blogs: [],
+      error: false,
     }
   },
   methods: {
+    changeStateToRegular() {
+      this.$store.commit({type: 'changePageState', state: PageStateE.BlogView });
+      console.log(this.$store.state.PageState);
+    },
     changeState() {
       this.$store.commit({type: 'changePageState', state: PageStateE.ContentView });
     },
@@ -64,12 +72,14 @@ export default {
         this.contentTypes = response.data;
       } catch(err) {
         console.log(err);
+        this.error = true;
       }
     },
     async getBlogs() {
       try {
         const response = await events.get("/markdowns")
         if (response.status == 200) {
+          console.log(response.data)
           this.blogs = response.data;
         }
       } catch(err) {
@@ -99,63 +109,7 @@ export default {
   watch: {
   },
   components: {
-    MyContent,
-    MyMdRenderer
+    MyContentCard,
   },
 };
 </script>
-
-<style lang="scss" scoped>
-
-.myblog {
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  height: 90%;
-  padding-top: 10px;
-  
-  .content-bookmark {
-    padding: 2% 2% 2% 1%;
-    margin: 0 1% auto auto;
-
-    ul {
-      list-style-type:none;
-      justify-content: start;
-      margin: 0;
-      padding: 0;
-      li{
-        padding: 1px 30px 1px 30px;
-        border-radius: 5px;
-        border-image-slice: 1;
-        border-style: solid;
-        border-color: #00000000;
-        box-shadow: 1px 1px 1px rgb(0,0,0 / 21%);
-      }
-
-    }
-  }
-  .contentboxcontainer {
-    display: inherit;
-    width: 100%;
-    height:100%;
-  }
-  .contentbox {
-    max-width: 200px;
-    max-height: 200px;
-  }
-}
-
-.hline {
-  display: inline-block;
-  border-top: 1px solid;
-  height: 1px;
-  width: 100%;
-}
-.vline {
-  display: inline-block;
-  border-right: 1px solid;
-  margin-right: 5px;
-  margin-left: 5px;
-  height: 100%;
-}
-</style>

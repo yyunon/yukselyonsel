@@ -3,35 +3,45 @@ import MyHome from "../views/MyHome.vue";
 import MyProjects from "../views/MyProjects.vue";
 import MyBlog from "../views/MyBlog.vue";
 import MyContact from "../views/MyContact.vue";
+import MyContent from "../components/MyContent.vue";
 import MyCv from "../views/MyCv.vue";
 
 const routes = [
     {
       path:"/",
-      name: "MyHome",
+      name: "welcome",
+      component: MyHome,
+    },
+    {
+      path:"/home",
+      name: "home",
       component: MyHome,
     },
     {
       path:"/projects",
-      name: "MyProjects",
+      name: "projects",
       component: MyProjects,
     },
     {
       path:"/blog",
-      name: "MyBlog",
+      name: "blog",
       component: MyBlog,
       children: [
-
       ]
     },
     {
+      path:"/blog/view",
+      name: "blogView",
+      component: MyContent,
+    },
+    {
       path:"/contact",
-      name: "MyContact",
+      name: "contactme",
       component: MyContact,
     },
     {
       path:"/vc",
-      name: "MyCv",
+      name: "cv",
       component: MyCv,
     },
 ];
@@ -39,6 +49,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition || new Promise((resolve) => {
+      setTimeout(() => resolve({top: 0}), 300)
+    })
+  }
 });
 
 export default router;

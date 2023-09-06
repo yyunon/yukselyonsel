@@ -1,6 +1,6 @@
 <template>
-  <div class="mycontact">
-    <div class="contact-me">
+  <div class="flex flex-row w-full justify-center">
+    <div class="flex flex-col justify-center">
       <div>
         <h3>Please feel free to reach out to me via </h3>
       </div>
@@ -12,8 +12,8 @@
       <div>
         <h3>or send me a message below</h3>
       </div>
-      <div class="contact-me-form">
-        <form class="contact-me-form" @submit.prevent="submit" v-show='formState == "idle"'> 
+      <div class="flex flex-col w-full">
+        <form class="" @submit.prevent="submit" v-show='formState == "idle"'> 
           <label for="userEmail">Please type in your email below:</label> <br>
           <input required name="Email" id ="userEmail" v-model='contactInfo.userEmail' placeholder="youremail@yourdomain.com" type="text" autocomplete="on"> <br>
           <label for="userEmail">Subject:</label><br>
@@ -26,7 +26,7 @@
         <span class="user-text" v-show='formState == "successful-post" || formState == "message-sent" || formState == "invalid-post" ' style="font-size: 16pt;"> {{ userMessage }}</span>
       </div>
       </div>
-        <img src="/assets/IMG_20221231_100906.jpg">
+      <img class="hidden sm:block my-0 sm:mx-10 border-sm h-auto object-contain max-w-sm" src="/assets/IMG_20221231_100906.jpg">
   </div>
 </template>
 
@@ -83,30 +83,12 @@ export default {
 
 <style lang="scss" scoped>
 
-.mycontact {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: center;
   .icons {
     .git {
       padding-top: 5px;
       padding-left: 5px;
     }
   }
-  .contact-me {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-    width: 50%;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    font-style: inherit;
-    .contact-me-form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      
       input {
         font: inherit;
         margin: 5px;
@@ -170,13 +152,4 @@ export default {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
       }
-    }
-  }
-  img {
-    margin: 20px;
-    border-radius: 10px;
-    max-width: 263px;
-    max-height: 387px;
-  }
-}
 </style>

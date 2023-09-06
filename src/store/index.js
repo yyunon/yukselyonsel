@@ -1,4 +1,5 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import createPersistedState from "vuex-plugin-persistedstate";
 
 const PageStateE = {
   BlogView: "blogView",
@@ -19,6 +20,7 @@ const store = createStore({
         createdAt: "",
         logoImagePath: "",
       },
+      mobile: false,
     }
   },
   mutations: {
@@ -34,11 +36,15 @@ const store = createStore({
     updateContentTypeUnderView(state, payload) {
       state.contentTypeUnderView = payload.contentType
     },
+    updateMobileState(state, payload) {
+      state.mobile = payload.mobile
+    },
   },
   actions: {
   },
   modules: {
-  }
+  },
+  plugins: [createPersistedState()],
 });
 
 export {PageStateE, store}

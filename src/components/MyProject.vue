@@ -1,19 +1,19 @@
 <template>
-  <div class="single-project" :style="cssProps" v-on:click="toggleSection">
+  <div class="single-project p-5" :style="cssProps" v-on:click="toggleSection">
     <h5 class="h5">
       {{ projectData.header }} 
       <div>
         <span class="icon-container" v-for="(item, i) in projectData.icons" :key="i">
-          <img id="devicon" v-bind:src='item.url' v-bind:alt="item.name">
+          <img class="inline-block rounded-full w-8 h-8" v-bind:src="item.url" v-bind:title="item.name">
         </span>
       </div>
     </h5>
     <div class="project-container">
       <div class="sectionHeader">
-        {{ summary }}
+        {{ projectData.sectionSummary }}
         <span class="toggleIcon" id="toggleIcon" style="text-" v-show="!showSection">{{toggleIcon}}</span> 
           <span class="sectionBody" v-show="showSection">
-            {{ fullredux }}
+            <MyDynComp :content="projectData.sectionBody"/>
           </span>
       </div>
     </div>
@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import MyDynComp from './MyDynComp.vue';
+
 export default {
   name: 'MyProject',
   props: ['animationDelay','projectData', 'summaryLength'],
@@ -55,6 +57,9 @@ export default {
           '--animation-delay': this.animationDelay
         }
       }
+  },
+  components: {
+    MyDynComp
   }
 }
 </script>
@@ -62,44 +67,18 @@ export default {
 <style lang="scss">
   .single-project {
     text-align: center;
-    cursor: pointer;
     animation: slide-in-opaque;
     animation-delay: calc(var(--animation-delay) * .2s);
     animation-duration: .3s;
     animation-fill-mode: backwards;
 
     .h5 {
-      .icon-container {
-        display: inline-block;
-      }
       font-size: 20px;
-    }
-    img{
-      max-width : 25px;
-      max-height : 25px;
-      vertical-align: middle;
-    }
-    .project-container{
-      display: block;
-      .sectionHeader {
-
-        .slide-enter-active {
-          animation-name: slide-dir;
-        }
-
-        .slide-leave-active {
-          animation-name: slide-dir;
-        }
-
-        @keyframes slide-dir {
-        }
-
-      }
     }
   }
   .single-project:hover {
-    margin: 2px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+    //margin: 2px;
+    box-shadow: 3px 3px 3px rgba(131, 131, 131, 0.5);
     transition: .1s ease all;
   }
 

@@ -1,51 +1,51 @@
 
 const iconFactory = {
   rust: {
-    name: "rust",
+    name: "RUST",
     url: "/assets/rust-plain.svg"
   },
   c: {
-    name: "cpp",
+    name: "C",
     url: "/assets/c-original.svg"
   },
   cpp: {
-    name: "cpp",
+    name: "C++",
     url: "/assets/cplusplus-original.svg"
   },
   azure: {
-    name: "cpp",
+    name: "Azure",
     url: "/assets/azure-original.svg"
   },
   cmake: {
-    name: "cpp",
+    name: "CMAKE",
     url: "/assets/cmake-original.svg"
   },
   csharp: {
-    name: "cpp",
+    name: "C#",
     url: "/assets/csharp-original.svg"
   },
   googlecloud: {
-    name: "cpp",
+    name: "Google Cloud Platform",
     url: "/assets/googlecloud-original.svg"
   },
   java: {
-    name: "cpp",
+    name: "Java",
     url: "/assets/java-original.svg"
   },
   javascript: {
-    name: "cpp",
+    name: "Javascript",
     url: "/assets/javascript-original.svg"
   },
   python: {
-    name: "cpp",
+    name: "python",
     url: "/assets/python-original.svg"
   },
   vuejs: {
-    name: "cpp",
+    name: "Vue3",
     url: "/assets/vuejs-original.svg"
   },
   amazonwebservices: {
-    name: "cpp",
+    name: "AWS",
     url: "/assets/amazonwebservices-original.svg"
   },
 };
