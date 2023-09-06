@@ -1,7 +1,7 @@
 <template>
   <MyNav/>
   <div class="w-full flex flex-row md:justify-center">
-    <div class="flex justify-center items-center h-screen m-2" v-show='$route.name != "blog"'>
+    <div class="flex justify-center items-center h-screen m-2">
       <aside id="sidebar-icons" class="hidden sm:flex flex-col items-center text-center justifty-center p-2 border-2 rounded-2xl">
         <a href="https://www.linkedin.com/in/yukselyonsel" class="mx-2 my-2" target="_blank">
           <span class="sr-only">Linkedin</span>
@@ -21,7 +21,7 @@
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
         </a>
-        <a href="mailto:yonsel.yuksel@gmail.com">
+        <router-link :to="{name: 'contactme'}">
           <span class="sr-only">Mailto</span>
           <svg class="w-4 h-4 md:w-8 md:h-8"  xmlns="http://www.w3.org/2000/svg" viewBox="52 42 88 66">
             <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
@@ -34,10 +34,10 @@
             Mail me!
             <div class="tooltip-arrow" data-popper-arrow></div>
           </div>
-        </a>
+        </router-link>
       </aside>
     </div>
-    <div class="view w-full justify-center inline-flex md:p-5 z-1">
+    <div class="view w-full justify-center inline-flex md:p-5 z-1 overflow-scroll overflow-x-scroll">
       <router-view/>
     </div>
   </div>

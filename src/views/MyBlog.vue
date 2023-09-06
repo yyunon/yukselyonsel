@@ -1,27 +1,28 @@
 <template>
   <div class="flex flex-col mx-5 w-full font-ralewaysans">
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" v-show='($store.state.PageState == "blogView")'>
-    <div class="font-thin text-5xl text-center" v-show='($store.state.PageState == "blogView")'>
+    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" >
+    <div class="font-extralight text-5xl text-center" >
       <h1>On the Blog</h1>
     </div>
 
-    <div class="inline-flex flex-row justify-between pt-5 p-1" v-show='($store.state.PageState == "blogView")'>
-        <div class="font-thin m-auto" v-for="item of contentTypes" :key="item.contentType">
+    <div class="inline-flex flex-row justify-between pt-5 p-1" >
+        <div class="font-light m-auto" v-for="item of contentTypes" :key="item.contentType">
           <a href='#' class="no-underline" @click="changeContentTypeWithView(item.contentType)">
             {{ item.contentType }}
           </a>
         </div>
     </div>
 
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" v-show='($store.state.PageState == "blogView")'>
+    <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700 my-2" v-show='($store.state.PageState == "blogView")'>
 
-    <div class="flex flex-row p-10">
-      <div class="justify-center w-full">
-        <div class="" v-for="(x, index) in blogs" :key="index" v-show='($store.state.PageState == "blogView") && ((x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All"))'>
-          <MyContent v-bind:contentIndex="index" v-bind:blogI="x"/>
-        </div>
-        <div class="post" v-show='($store.state.PageState == "contentView")'>
-          <MyMdRenderer :source='blogUnderView.content' v-if="blogUnderView"/>
+    <div v-show="error">
+      Sorry :(, server is down. Please try again in 30 min.
+    </div>
+
+    <div class="flex">
+      <div class="flex flex-col md:flex-row w-full">
+        <div class="flex md:flex-row" v-for="(x, index) in blogs" :key="index" v-show='(x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All")' >
+          <MyContentCard v-bind:contentIndex="index" v-bind:blogI="x"/>
         </div>
       </div>
     </div>
@@ -30,8 +31,7 @@
 
 <script>
 // @ is an alias to /src
-import MyMdRenderer from "../components/MyMdRenderer.vue"
-import MyContent from "../components/MyContent.vue"
+import MyContentCard from "../components/MyContentCard.vue"
 import {PageStateE} from "../store/index.js"
 import events from "../utils/api.js"
 
@@ -47,6 +47,7 @@ export default {
       },
       contentTypes: [],
       blogs: [],
+      error: false,
     }
   },
   methods: {
@@ -71,12 +72,14 @@ export default {
         this.contentTypes = response.data;
       } catch(err) {
         console.log(err);
+        this.error = true;
       }
     },
     async getBlogs() {
       try {
         const response = await events.get("/markdowns")
         if (response.status == 200) {
+          console.log(response.data)
           this.blogs = response.data;
         }
       } catch(err) {
@@ -106,8 +109,7 @@ export default {
   watch: {
   },
   components: {
-    MyContent,
-    MyMdRenderer
+    MyContentCard,
   },
 };
 </script>

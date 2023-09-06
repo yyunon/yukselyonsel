@@ -1,4 +1,5 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import createPersistedState from "vuex-plugin-persistedstate";
 
 const PageStateE = {
   BlogView: "blogView",
@@ -42,7 +43,8 @@ const store = createStore({
   actions: {
   },
   modules: {
-  }
+  },
+  plugins: [createPersistedState()],
 });
 
 export {PageStateE, store}

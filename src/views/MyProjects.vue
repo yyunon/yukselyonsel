@@ -1,9 +1,16 @@
 <template>
-  <div class="myprojects m-5">
+  <div class="flex flex-col m-5 text-center w-full">
+    <div class="w-full align-center">
       <p>
-        Below, you can see the chosen projects of my mine. Please check my Github for the rest of my contributions and projects!
+        Below, you can see the chosen projects of my mine. I choose them due to their scope and duration.
+        Please check my 
+        <a href="https://github.com/yyunon" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">
+          Github
+        </a>
+        for the rest of my contributions and projects!
       </p>
-    <div class="container">
+    </div>
+    <div class="flex flex-col justify-center">
       <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
       <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
     </div>
@@ -41,7 +48,79 @@ export default {
             `
               <p>FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using.<p>
               <div>
-                In this project, I have worked on several different repositories.
+                <p class="text-start">
+                In this project, I have worked on several different repositories:
+                </p>
+
+                <div class="flex flex-col">
+
+                  <div class="flex flex-row my-2">
+                    <a href="https://github.com/yyunon/abs-tpc-accelerated" class="" target="_blank">
+                      <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+                    </a>
+                    <div class="text-start mx-2">
+                    <a href="https://github.com/yyunon/abs-tpc-accelerated" class="" target="_blank">
+                      <span>
+                        yyunon
+                      </span>
+                      <span class="text-gray-500">
+                        /
+                      </span>
+                      <span>
+                        abs-tpc-accelerated
+                      </span>
+                    </a>
+                      <p class="text-xs text-gray-700">
+                        This is the software component that is incorporated with my thesis. It consists of a multithreaded scheduler that schedules tasks to FPGA compute. Also, it has seamless integration with Apache Spark.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-row my-2">
+                    <a href="https://github.com/yyunon/tpch1" class="" target="_blank">
+                      <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+                    </a>
+                    <div class="text-start mx-2">
+                    <a href="https://github.com/yyunon/tpch1" class="" target="_blank">
+                      <span>
+                        yyunon
+                      </span>
+                      <span class="text-gray-500">
+                        /
+                      </span>
+                      <span>
+                        tpch1
+                      </span>
+                    </a>
+                      <p class="text-xs text-gray-700">
+                        Hardware design of TPC-H Query 1, for AWS F1 instances. It implements a query pushdown logic.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-row my-2">
+                    <a href="https://github.com/yyunon/tpch6" class="" target="_blank">
+                      <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+                    </a>
+                    <div class="text-start mx-2">
+                    <a href="https://github.com/yyunon/tpch6" class="" target="_blank">
+                      <span>
+                        yyunon
+                      </span>
+                      <span class="text-gray-500">
+                        /
+                      </span>
+                      <span>
+                        tpch6
+                      </span>
+                    </a>
+                      <p class="text-xs text-gray-700">
+                        Hardware design of TPC-H Query 6, for AWS F1 instances. It implements a query pushdown logic.
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             `,
           icons: [iconFactory.cpp, iconFactory.cmake, iconFactory.c, iconFactory.amazonwebservices, iconFactory.python]
@@ -50,6 +129,10 @@ export default {
       yukselyonseldotcomProject() {
         return {
           header: "yukselyonsel.com",
+          sectionSummary:
+            `
+              The website that you are now clicking on is my yet another side project to mingle with the UI world. 
+            `,
           sectionBody: 
             `This website is also one of my projects to play with frontend components and get lost in UI/UX design. The frontend is written with Vue3. Moreover, I do run a server on google cloud and the backend is completely written in Rust.
             `,
@@ -61,10 +144,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-.myhome {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
 </style>

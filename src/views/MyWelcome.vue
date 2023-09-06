@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute flex flex-col md:ml-20 md:pt-20 justify-center text-xl">
+  <div class="absolute flex flex-col md:ml-20 justify-center text-xl">
     <div class="container flex p-0">
       <div class="myintro" v-for="cs in contentStructs" v-bind:key="cs.contentHtml">
           <MyIntroduction v-bind:content="cs.contentHtml" v-bind:style="cs.contentStyle" :key="cs.contentTrigger"/>

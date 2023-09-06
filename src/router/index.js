@@ -1,16 +1,16 @@
 import {createRouter, createWebHistory} from "vue-router";
-import MyWelcome from "../views/MyWelcome.vue";
 import MyHome from "../views/MyHome.vue";
 import MyProjects from "../views/MyProjects.vue";
 import MyBlog from "../views/MyBlog.vue";
 import MyContact from "../views/MyContact.vue";
+import MyContent from "../components/MyContent.vue";
 import MyCv from "../views/MyCv.vue";
 
 const routes = [
     {
       path:"/",
       name: "welcome",
-      component: MyWelcome,
+      component: MyHome,
     },
     {
       path:"/home",
@@ -27,8 +27,12 @@ const routes = [
       name: "blog",
       component: MyBlog,
       children: [
-
       ]
+    },
+    {
+      path:"/blog/view",
+      name: "blogView",
+      component: MyContent,
     },
     {
       path:"/contact",

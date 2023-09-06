@@ -13,7 +13,7 @@ const props = defineProps({
 //console.log(element);
 //const contentStyle = getComputedStyle(element);
 const render = () => {
-	return h('div', {class: 'typewriter sm:text-4xl text-2xl', innerHTML: props.content, style: {
+	return h('div', {class: 'typewriter', innerHTML: props.content, style: {
 			'display': 'inline-block',
 			'font-style': 'inherit', 
 			'width': 'fit-content',

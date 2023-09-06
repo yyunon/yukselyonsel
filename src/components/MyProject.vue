@@ -67,7 +67,6 @@ export default {
 <style lang="scss">
   .single-project {
     text-align: center;
-    cursor: pointer;
     animation: slide-in-opaque;
     animation-delay: calc(var(--animation-delay) * .2s);
     animation-duration: .3s;
@@ -78,7 +77,7 @@ export default {
     }
   }
   .single-project:hover {
-    margin: 2px;
+    //margin: 2px;
     box-shadow: 3px 3px 3px rgba(131, 131, 131, 0.5);
     transition: .1s ease all;
   }
