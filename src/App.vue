@@ -1,8 +1,9 @@
 <template>
   <MyNav/>
   <div class="w-full flex flex-row md:justify-center">
-    <div class="flex justify-center items-center h-screen m-2">
-      <aside id="sidebar-icons" class="hidden sm:flex flex-col items-center text-center justifty-center p-2 border-2 rounded-2xl">
+    <div class="flex relative justify-center items-center h-screen m-2">
+      <div class="fixed left-3">
+      <aside id="sidebar-icons" class="flex scroll:fixed hidden sm:flex flex-col items-center text-center justifty-center p-2 border-2 rounded-2xl">
         <a href="https://www.linkedin.com/in/yukselyonsel" class="mx-2 my-2" target="_blank">
           <span class="sr-only">Linkedin</span>
           <svg class="w-4 h-4 md:w-8 md:h-8 fill-linkedin" xmlns="http://www.w3.org/2000/svg" height="md:1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -36,8 +37,9 @@
           </div>
         </router-link>
       </aside>
+      </div>
     </div>
-    <div class="view w-full justify-center inline-flex md:p-5 z-1 overflow-scroll overflow-x-scroll">
+    <div class="view w-full mx-20 justify-center inline-flex md:p-5 z-1 overflow-scroll overflow-x-scroll">
       <router-view/>
     </div>
   </div>
