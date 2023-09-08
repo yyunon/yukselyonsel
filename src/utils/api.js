@@ -12,10 +12,10 @@ const apiClient = axios.create({
 
 const events = {
   async get(path) {
-    return apiClient.get(path, {timeout: 1000})
+    return apiClient.get("https://35.208.253.242/api" + path, {timeout: 1000})
   },
   async post(path, body) {
-    return apiClient.post(path, body, {timeout: 1000})
+    return apiClient.post("https://35.208.253.242/api" + path, body, {timeout: 1000})
   }
 }
 
