@@ -7,7 +7,7 @@
           </div>
           <div>
             <h3 class="text-xl"> {{ blog.title }}</h3>
-            <p class="text-base"> {{ blogI.metadata }}</p>
+            <p class="text-sm text-gray-500"> {{ blogI.metadata }}</p>
             <p class="text-base"> {{ blog.description }}</p>
           </div>
         </router-link>
