@@ -13,13 +13,13 @@
         </div>
     </div>
 
-    <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700 my-2" v-show='($store.state.PageState == "blogView")'>
+    <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
 
     <div v-show="error">
       Sorry :(, server is down. Please try again in 30 min.
     </div>
 
-    <div class="flex">
+    <div class="flex pt-10">
       <div class="flex flex-col md:flex-row w-full">
         <div class="flex md:flex-row" v-for="(x, index) in blogs" :key="index" v-show='(x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All")' >
           <MyContentCard v-bind:contentIndex="index" v-bind:blogI="x"/>

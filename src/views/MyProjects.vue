@@ -46,7 +46,13 @@ export default {
             `,
           sectionBody: 
             `
-              <p>FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using.<p>
+              <p>FPGAs (Field Programmable Gate Arrays) are integrated circuits that are reconfigurable and programmed via hardware description languages. 
+                They provide many benefits due to them being highly reconfigurable and can be configured to be application specific. 
+                The idea of my research was to focus on accelering database queries on FPGA's while abstracting the technology from the big data framework that we are using.<p>
+              <p>
+                You can always read my thesis 
+                <a href="https://repository.tudelft.nl/islandora/object/uuid%3A85d80b28-f1ed-4e52-b233-1c20a7ba376b" class="text-xl" target="_blank">here</a>
+              </p>
               <div>
                 <p class="text-start">
                 In this project, I have worked on several different repositories:
@@ -58,7 +64,7 @@ export default {
                     <a href="https://github.com/yyunon/abs-tpc-accelerated" class="" target="_blank">
                       <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
                     </a>
-                    <div class="text-start mx-2">
+                    <div class="text-start w-1/2 mx-2">
                     <a href="https://github.com/yyunon/abs-tpc-accelerated" class="" target="_blank">
                       <span>
                         yyunon
@@ -76,11 +82,11 @@ export default {
                     </div>
                   </div>
 
-                  <div class="flex flex-row my-2">
+                  <div class="flex my-2">
                     <a href="https://github.com/yyunon/tpch1" class="" target="_blank">
                       <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
                     </a>
-                    <div class="text-start mx-2">
+                    <div class="text-start w-1/2 mx-2">
                     <a href="https://github.com/yyunon/tpch1" class="" target="_blank">
                       <span>
                         yyunon
@@ -98,11 +104,11 @@ export default {
                     </div>
                   </div>
 
-                  <div class="flex flex-row my-2">
+                  <div class="flex my-2">
                     <a href="https://github.com/yyunon/tpch6" class="" target="_blank">
                       <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
                     </a>
-                    <div class="text-start mx-2">
+                    <div class="text-start w-1/2 mx-2">
                     <a href="https://github.com/yyunon/tpch6" class="" target="_blank">
                       <span>
                         yyunon

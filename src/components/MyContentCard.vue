@@ -1,17 +1,17 @@
 <template>
-    <div class="m-4 w-80 animation:slide-in" @click="changeStateWithView(blogI)">
-      <a href="#" class="click-div remove-style-hrefs">
-      <div class="blog-container">
-          <div class="content">
-            <router-link :to="{name: 'blogView'}">
-              <img class="w-auto max-h-40" :src="blog.logoImagePath">
-              <h3 class="text-xl"> {{ blog.title }}</h3>
-              <p class="text-base"> {{ blogI.metadata }}</p>
-              <p class="text-base"> {{ blog.description }}</p>
-            </router-link>
+    <div class="m-4 w-80 content-container" @click="changeStateWithView(blogI)">
+      <div class="content h-full w-auto">
+        <router-link class="flex flex-col justify-between h-full w-auto" :to="{name: 'blogView'}">
+          <div>
+            <img class="w-auto h-20px max-h-40" :src="blog.logoImagePath">
           </div>
+          <div>
+            <h3 class="text-xl"> {{ blog.title }}</h3>
+            <p class="text-base"> {{ blogI.metadata }}</p>
+            <p class="text-base"> {{ blog.description }}</p>
+          </div>
+        </router-link>
       </div>
-      </a>
     </div>
 </template>
 
@@ -69,33 +69,6 @@ export default {
   animation: slide-in .5s;
   animation-delay: calc(.5s + v-bind('contentIndex'));
   animation-fill-mode: backwards;
-  width: 33rem;
-  height: auto;
-
-  .blog-container {
-    margin-right: 10px;
-    padding-top: 5px;
-    box-shadow: 2px 2px 2px rgba(131, 131, 131, 0.7);
-    border: 1px;
-    border-image-slice: 1;
-
-    
-    .content {
-      margin-left: 5%;
-      margin-right: 5%;
-    }
-    .click-div {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-    }
-    &:hover {
-      box-shadow: none;
-      transition: .3s ease all;
-    }
-  }
-
 }
 .remove-style-hrefs {
   color:inherit;
