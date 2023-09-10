@@ -39,7 +39,7 @@
       </aside>
       </div>
     </div>
-    <div class="view w-full mx-20 justify-center inline-flex md:p-5 z-1 overflow-scroll overflow-x-scroll">
+    <div class="view w-full md:mx-20 justify-center inline-flex md:p-5 z-1 overflow-scroll overflow-x-scroll">
       <router-view/>
     </div>
   </div>
