@@ -70,10 +70,6 @@ export default {
   animation-delay: calc(.5s + v-bind('contentIndex'));
   animation-fill-mode: backwards;
 }
-.remove-style-hrefs {
-  color:inherit;
-  text-decoration:none;
-}
 
 @keyframes slide-in {
   from {

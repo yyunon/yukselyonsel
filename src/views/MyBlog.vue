@@ -7,9 +7,9 @@
 
     <div class="inline-flex flex-row justify-between pt-5 p-1" >
         <div class="font-light m-auto" v-for="item of contentTypes" :key="item.contentType">
-          <a href='#' class="no-underline" @click="changeContentTypeWithView(item.contentType)">
+          <div class="cursor-pointer" @click="changeContentTypeWithView(item.contentType)">
             {{ item.contentType }}
-          </a>
+          </div>
         </div>
     </div>
 
@@ -19,9 +19,9 @@
       Sorry :(, server is down. Please try again in 30 min.
     </div>
 
-    <div class="flex pt-10">
+    <div class="flex p-10">
       <div class="flex flex-col md:flex-row w-full">
-        <div class="flex md:flex-row" v-for="(x, index) in blogs" :key="index" v-show='(x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All")' >
+        <div class="flex md:flex-row mr-10" v-for="(x, index) in blogs" :key="index" v-show='(x.contentType == $store.state.contentTypeUnderView) || ($store.state.contentTypeUnderView == "All")' >
           <MyContentCard v-bind:contentIndex="index" v-bind:blogI="x"/>
         </div>
       </div>
@@ -79,7 +79,6 @@ export default {
       try {
         const response = await events.get("/markdowns")
         if (response.status == 200) {
-          console.log(response.data)
           this.blogs = response.data;
         }
       } catch(err) {
@@ -88,8 +87,6 @@ export default {
     },
     async changeContentTypeWithView(contentType) {
       this.$store.commit({type: 'updateContentTypeUnderView', contentType: contentType});
-      this.$store.commit({type: 'changePageState', state: PageStateE.BlogView });
-      await this.getBlogs();
     },
   },
   async created() {
