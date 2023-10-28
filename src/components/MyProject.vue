@@ -1,5 +1,5 @@
 <template>
-  <div class="single-project p-5" :style="cssProps" v-on:click="toggleSection">
+  <div class="single-project p-5 font-xs" :style="cssProps" v-on:click="toggleSection">
     <h5 class="h5">
       {{ projectData.header }} 
       <div>
