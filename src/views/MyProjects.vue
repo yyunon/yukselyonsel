@@ -1,18 +1,31 @@
 <template>
   <div class="flex flex-col m-5 text-center w-full">
-    <div class="w-full align-center">
-      <p>
-        Below, you can see the chosen projects of my mine. I choose them due to their scope and duration.
-        Please check my 
-        <a href="https://github.com/yyunon" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">
-          Github
-        </a>
-        for the rest of my contributions and projects!
-      </p>
+    <div class="flex flex-col m-5 text-left w-full">
+      <div class="w-full align-center italic">
+        <p>
+          Below, you can see the chosen projects of my mine. I choose them due to their scope and duration.
+          Please check my 
+          <a href="https://github.com/yyunon" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">
+            Github
+          </a>
+          for the rest of my contributions and projects!
+        </p>
+      </div>
+      <div class="flex flex-col justify-center">
+        <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
+      </div>
     </div>
-    <div class="flex flex-col justify-center">
-      <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
-      <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
+    <div class="flex flex-col m-5 text-left w-full">
+      <div class="w-full align-center italic">
+        <p>
+          Some of my archived and small projects or experiments are below.
+        </p>
+      </div>
+      <div class="flex flex-col justify-center">
+        <MyProject animationDelay="3" v-bind:projectData="deepImagePrior" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="4" v-bind:projectData="archLudwig" v-bind:summaryLength="30"/>
+      </div>
     </div>
   </div>
 </template>
@@ -143,6 +156,63 @@ export default {
             `This website is also one of my projects to play with frontend components and get lost in UI/UX design. The frontend is written with Vue3. Moreover, I do run a server on google cloud and the backend is completely written in Rust.
             `,
           icons: [iconFactory.vuejs, iconFactory.javascript, iconFactory.rust, iconFactory.googlecloud]
+        }
+      },
+      deepImagePrior() {
+        return {
+          header: "Deep Image Prior",
+          sectionSummary:
+            `
+            I was one of the three people who investigated the reproduction of of paper on deep image priors.
+            `,
+          sectionBody: 
+            `
+            <div class="flex my-2">
+              <a href="https://github.com/yyunon/reproducibility-project-group-71" class="" target="_blank">
+                <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+              </a>
+              <div class="text-start w-1/2 mx-2">
+              <a href="https://github.com/yyunon/reproducibility-project-group-71" class="" target="_blank">
+                <span>
+                  yyunon
+                </span>
+                <span class="text-gray-500">
+                  /
+                </span>
+                <span>
+                  reproducibility-project-group-71
+                </span>
+              </a>
+                <p class="text-xs text-gray-700">
+                  This is the repository containing the reproducibility project of deep learning course
+                </p>
+              </div>
+            </div>
+            We have also written a blog post on how to reproduce it. Please click 
+            <a href="https://github.com/yyunon/reproducibility-project-group-71/blob/master/Blog.ipynb" class="underline" target="_blank"><span>here</span></a> for more information about the blog post.
+            This post is later published in 
+            <a href="https://reproducedpapers.org" class="underline" target="_blank">
+              <span>
+            https://reproducedpapers.org
+              </span>
+            </a> 
+            `,
+          icons: [iconFactory.python]
+        }
+      },
+      archLudwig() {
+        return {
+          header: "Architectural Analysis of Ludwig",
+          sectionSummary:
+            `
+            In the scope of this project, I have worked with several of my classmates to analyse and improve the architecture of Ludwig. we have also produced several blog posts which
+            are published in the course website.
+            `,
+          sectionBody: 
+            `Please click 
+            <a href="https://desosa.nl/projects/ludwig/" class="underline" target="_blank"><span>here</span></a> for more information about it.
+            `,
+          icons: [iconFactory.python]
         }
       },
   }
