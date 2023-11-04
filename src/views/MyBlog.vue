@@ -1,7 +1,6 @@
 <template>
-  <div class="flex flex-col mx-5 w-full font-ralewaysans">
-    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700" >
-    <div class="font-extralight text-5xl text-center" >
+  <div class="flex flex-col sm:my-20 w-full font-ralewaysans">
+    <div class="font-light text-5xl text-center" >
       <h1>On the Blog</h1>
     </div>
 

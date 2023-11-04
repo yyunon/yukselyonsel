@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col m-5 text-center w-full">
-    <div class="flex flex-col m-5 text-left w-full">
+  <div class="flex flex-col md:my-37 px-5 text-center w-full scroll-smooth">
+    <div class="flex flex-col md:my-20 text-left w-full">
       <div class="w-full align-center italic">
         <p>
           Below, you can see the chosen projects of my mine. I choose them due to their scope and duration.
@@ -25,6 +25,7 @@
       <div class="flex flex-col justify-center">
         <MyProject animationDelay="3" v-bind:projectData="deepImagePrior" v-bind:summaryLength="30"/>
         <MyProject animationDelay="4" v-bind:projectData="archLudwig" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="5" v-bind:projectData="yim" v-bind:summaryLength="30"/>
       </div>
     </div>
   </div>
@@ -160,7 +161,7 @@ export default {
       },
       deepImagePrior() {
         return {
-          header: "Deep Image Prior",
+          header: "Deep Image Priors",
           sectionSummary:
             `
             I was one of the three people who investigated the reproduction of of paper on deep image priors.
@@ -215,9 +216,40 @@ export default {
           icons: [iconFactory.python]
         }
       },
+      yim() {
+        return {
+          header: "A recreational editor,  Yim",
+          sectionSummary:
+            `
+            I wanted to experiment with termios and shell manipulation in Rust. At that time, implementing an editor was fun idea to play with Rust. 
+            `,
+          sectionBody: 
+            `Please click 
+            <a href="https://github.com/yyunon/yim" class="underline" target="_blank"><span>here</span></a> for more information about it.
+            `,
+          icons: [iconFactory.rust]
+        }
+      },
   }
 };
 </script>
 
 <style lang="scss" scoped>
+  .reveal {
+    animation: slide-in-opaque;
+    animation-delay: calc(.1s * var(--animation-delay));
+    animation-duration: .3s;
+    animation-fill-mode: backwards;
+  }
+
+  @keyframes slide-in-opaque {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
 </style>

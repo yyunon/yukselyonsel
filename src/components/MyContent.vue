@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-4 overflow-scroll">
+  <div class="space-y-4 sm:m-20 overflow-scroll">
     <div v-html="ydiv($store.state.blogUnderView.content)"></div>
   </div>
 </template>

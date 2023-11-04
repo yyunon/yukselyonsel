@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row w-full justify-center">
+  <div class="flex flex-row sm:my-10 p-10 w-full justify-center">
     <div class="flex flex-col justify-center">
       <div>
         <h3>Please feel free to reach out to me via </h3>

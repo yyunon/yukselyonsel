@@ -1,16 +1,19 @@
 <template>
-  <div class="work-box" :style="cssProps">
-    <div class="companyLogo">
-      <img :src="logo">
+  <div class="content-container flex flex-1 m-auto flex-col sm:m-auto w-52 text-center items-center justify-center" :style="cssProps">
+    <div class="p-5 flex flex-col justify-center">
+      <div class="p-auto">
+        <img class="object-scale-down justify-center m-auto h-40 w-auto" :src="logo">
+      </div>
+      <div class="font-semibold italic mt-5">{{ title }}</div>
+      <div class="font-normal mt-1">{{ info }}</div>
     </div>
-    <div class="title">{{ title }} {{ company }}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'MyExperience',
-  props: ['animationDelay', 'title','company', 'logo', 'extraStyle'],
+  props: ['animationDelay', 'title','company', 'logo', 'extraStyle', 'info'],
   data() {
     return {
       img_degree: 0,
@@ -37,42 +40,5 @@ export default {
 </script>
 
 <style lang="scss">
-  .work-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    height:auto;
-    padding:10px;
-    margin:0;
-
-    .title {
-      text-align: center;
-      vertical-align: middle;
-      margin: auto;
-    }
-    .companyLogo {
-      background-color: var(--extra-style);
-      width: 100%;
-      height: auto;
-    }
-  }
-  .work-box:hover {
-    margin: 2px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
-    border-radius: 15px;
-    transition: .1s ease all;
-  }
-
-  @keyframes slide-in-opaque {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0%);
-      opacity: 1;
-    }
-}
 
 </style>
