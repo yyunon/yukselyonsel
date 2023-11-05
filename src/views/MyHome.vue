@@ -1,7 +1,7 @@
 <template>
   <div class="justify-center md:h-full w-full dark:bg-slate-800">
-    <div class="relative md:min-h-full w-full dark:bg-slate-800 !scroll-smooth">
-      <div class="sm:absolute sm:bottom-20 sm:mb-20 sm:mx-20 sm:text-4xl text-2xl !scroll-smooth">
+    <div class="relative md:min-h-full w-full dark:bg-slate-800 ">
+      <div class="sm:absolute sm:bottom-20 sm:mb-20 sm:mx-20 sm:text-4xl text-2xl">
         <div> 
         hi,
         </div>
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <button class="invisible md:visible" @click="scrollToMe">
+      <button class="invisible md:visible" @click="scrollToMe" >
         <div class="sm:absolute sm:bottom-10 pt-10 w-full flex items-center justify-center">
           <svg class="animate-bounce w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"/>
@@ -33,19 +33,19 @@
         </div>
       </button>
     </div>
-    <div class="md:h-full w-full relative !scroll-smooth sm:px-20 sm:pt-10 dark:text-white dark:bg-slate-800">
-      <h1 class="reveal dark:text-white dark:bg-slate-800" style="--animation-delay: 1;" ref="me">Experiences</h1>
+    <div class="md:h-full w-full relative sm:px-20 sm:pt-20 dark:text-white dark:bg-slate-800" ref="me">
+      <h1 class="reveal dark:text-white dark:bg-slate-800" style="--animation-delay: 1;">Experiences</h1>
       <div class="flex flex-wrap justify-evenly dark:text-white dark:bg-slate-800">
-        <MyExperience class="reveal" style="--animation-delay: 2;" animationDelay="1" logo="/assets/kpn.png" title="Software Engineer" info="2022-present, Netherlands"/>
-        <MyExperience class="reveal" style="--animation-delay: 3;" animationDelay="2" logo="/assets/synerscope.png" title="Software Engineer" info="2021-2022, Netherlands"/>
-        <MyExperience class="reveal" style="--animation-delay: 4;" animationDelay="3" logo="/assets/geosignum.jpeg" title="Software Engineer" info="2019-2020, Netherlands"/>
-        <MyExperience class="reveal" style="--animation-delay: 5;" animationDelay="4" logo="/assets/roketsan.png" title="Electrical Engineer Intern" info="Summer 2018, Turkey"/>
-        <MyExperience class="reveal" style="--animation-delay: 6;" animationDelay="5" logo="/assets/vodafone.png" title="Software Engineer Intern" info="Summer 2017, Germany"/>
+        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 2;" animationDelay="1" logo="/assets/kpn.png" title="Software Engineer" info="2022-present, Netherlands"/>
+        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 3;" animationDelay="2" logo="/assets/synerscope.png" title="Software Engineer" info="2021-2022, Netherlands"/>
+        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 4;" animationDelay="3" logo="/assets/geosignum.jpeg" title="Software Engineer" info="2019-2020, Netherlands"/>
+        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 5;" animationDelay="4" logo="/assets/roketsan.png" title="Electrical Engineer Intern" info="Summer 2018, Turkey"/>
+        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 6;" animationDelay="5" logo="/assets/vodafone.png" title="Software Engineer Intern" info="Summer 2017, Germany"/>
       </div>
       <h1 class="reveal mt-10 dark:text-white dark:bg-slate-800" style="--animation-delay: 7;">Education</h1>
       <div class="flex flex-wrap flex-grow justify-evenly sm:w-1/3 dark:text-white dark:bg-slate-800">
-        <MyExperience class="reveal" style="--animation-delay: 8;" animationDelay="1" logo="/assets/tudelft.png" title="MSc. Computer Engineering" info="2019-2021, Netherlands"/>
-        <MyExperience class="reveal" style="--animation-delay: 9;" animationDelay="2" logo="/assets/metu.png" title="BSc. Electrical and Electronics Engineering" info="2014-2019, Turkey"/>
+        <MyExperience class="reveal shadow-lg" style="--animation-delay: 8;" animationDelay="1" logo="/assets/tudelft.png" title="MSc. Computer Engineering" info="2019-2021, Netherlands"/>
+        <MyExperience class="reveal shadow-lg" style="--animation-delay: 9;" animationDelay="2" logo="/assets/metu.png" title="BSc. Electrical and Electronics Engineering" info="2014-2019, Turkey"/>
       </div>
     </div>
   </div>
@@ -68,9 +68,6 @@ export default {
         var windowHeight = window.innerHeight;
         var revealTop = reveals[i].getBoundingClientRect().top;
         var revealPoint = 50;
-        //console.log("windowheight " + windowHeight);
-        //console.log("reveal " + revealTop);
-        //console.log("scroll pos " + window.scrollY);
         if (revealTop < windowHeight - revealPoint) {
           reveals[i].classList.add('active');
         } else {

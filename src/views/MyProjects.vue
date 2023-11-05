@@ -2,7 +2,7 @@
   <div class="flex flex-col md:my-37 px-5 text-center w-full scroll-smooth">
     <div class="flex flex-col md:my-20 text-left w-full">
       <div class="w-full align-center italic">
-        <p>
+        <p class="reveal">
           Below, you can see the chosen projects of my mine. I choose them due to their scope and duration.
           Please check my 
           <a href="https://github.com/yyunon" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">
@@ -18,7 +18,7 @@
     </div>
     <div class="flex flex-col m-5 text-left w-full">
       <div class="w-full align-center italic">
-        <p>
+        <p class="reveal">
           Some of my archived and small projects or experiments are below.
         </p>
       </div>
