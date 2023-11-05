@@ -1,5 +1,5 @@
 <template>
-    <div class="m-4 w-80 content-container" @click="changeStateWithView(blogI)">
+    <div class="m-4 w-80 content-container" :style="cssProps" @click="changeStateWithView(blogI)">
       <div class="content h-full w-auto">
         <router-link class="flex flex-col justify-between h-full w-auto" :to="{name: 'blogView'}">
           <div>
@@ -60,26 +60,33 @@ export default {
     this.blog = this.blogI
   },
   async mounted() {
+  },
+  computed: {
+    cssProps() {
+      return {
+          '--animation-delay': this.contentIndex + 1
+      }
+    }
   }
 }
 </script>
 
 <style lang="scss">
 .content-container {
-  animation: slide-in .5s;
-  animation-delay: calc(.5s + v-bind('contentIndex'));
+  animation: slide-in-opaque;
+  animation-delay: calc(1s + .1s * var(--animation-delay));
+  animation-duration: .3s;
   animation-fill-mode: backwards;
 }
 
-@keyframes slide-in {
+@keyframes slide-in-opaque {
   from {
     transform: translateX(-100%);
-    opacity: 0.25;
+    opacity: 0;
   }
   to {
     transform: translateX(0%);
     opacity: 1;
   }
 }
-
 </style>

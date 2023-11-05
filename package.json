@@ -19,6 +19,7 @@
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "dompurify": "^3.0.5",
+    "flowbite": "^2.0.0",
     "gl-matrix": "^3.4.3",
     "https-browserify": "^1.0.0",
     "markdown-it": "^13.0.1",
