@@ -283,7 +283,7 @@ export default {
               </div>
             </div>
             `,
-          icons: [iconFactory.rust]
+          icons: [iconFactory.java]
         }
       },
   }
