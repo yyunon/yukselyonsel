@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-4 sm:m-20 overflow-scroll">
+  <div class="space-y-4 sm:m-20 m-10">
     <div v-html="ydiv($store.state.blogUnderView.content)"></div>
   </div>
 </template>
@@ -38,7 +38,8 @@ export default {
       }
     },
     ydiv(inp) {
-      return `<div class="max-w-full whitespace-pre-line overflow-scroll">${inp}</div>`
+      console.log(inp);
+      return `<div class="child max-w-full whitespace-pre-wrap break-words">${inp}</div>`
     }
   },
   created() {
@@ -56,5 +57,22 @@ export default {
   .no-tailwindcss {
       all: initial;
   }
+}
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.child pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 </style>

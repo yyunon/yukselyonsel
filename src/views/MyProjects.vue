@@ -16,7 +16,7 @@
         <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
       </div>
     </div>
-    <div class="flex flex-col m-5 text-left w-full">
+    <div class="ex flex-col md:my-20 text-left w-full">
       <div class="w-full align-center italic">
         <p class="reveal">
           Some of my archived and small projects or experiments are below.

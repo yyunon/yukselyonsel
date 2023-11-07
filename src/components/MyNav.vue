@@ -1,5 +1,5 @@
 <template>
-  <div class="md:fixed sm:w-full top-0 z-50 w-full">
+  <div class="md:fixed sm:w-full top-0 z-50 w-full sm:shadow-sm">
     <nav class="border-gray-200 bg-white dark:bg-gray-800">
       <div class="flex flex-wrap items-center sm:justify-between pt-4 pl-4 sm:px-4 sm:mx-4 z-1 dark:text-white
                   ">
@@ -100,7 +100,6 @@
             </div>
         </div>
       </div>
-    <hr class="invisible md:visible h-px my-2 bg-gray-200 border-0 dark:bg-gray-700" >
     </nav>
   </div>
 </template>

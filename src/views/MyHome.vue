@@ -36,16 +36,16 @@
     <div class="md:h-full w-full relative sm:px-20 sm:pt-20 dark:text-white dark:bg-slate-800" ref="me">
       <h1 class="reveal dark:text-white dark:bg-slate-800" style="--animation-delay: 1;">Experiences</h1>
       <div class="flex flex-wrap justify-evenly dark:text-white dark:bg-slate-800">
-        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 2;" animationDelay="1" logo="/assets/kpn.png" title="Software Engineer" info="2022-present, Netherlands"/>
-        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 3;" animationDelay="2" logo="/assets/synerscope.png" title="Software Engineer" info="2021-2022, Netherlands"/>
-        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 4;" animationDelay="3" logo="/assets/geosignum.jpeg" title="Software Engineer" info="2019-2020, Netherlands"/>
-        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 5;" animationDelay="4" logo="/assets/roketsan.png" title="Electrical Engineer Intern" info="Summer 2018, Turkey"/>
-        <MyExperience class="reveal shadow-lg px-5" style="--animation-delay: 6;" animationDelay="5" logo="/assets/vodafone.png" title="Software Engineer Intern" info="Summer 2017, Germany"/>
+        <MyExperience class="reveal m-5 flex-1 shadow-lg px-5" style="--animation-delay: 2;" animationDelay="1" logo="/assets/kpn.png" title="Software Engineer" info="2022-present, Netherlands"/>
+        <MyExperience class="reveal m-5 flex-1 shadow-lg px-5" style="--animation-delay: 3;" animationDelay="2" logo="/assets/synerscope.png" title="Software Engineer" info="2021-2022, Netherlands"/>
+        <MyExperience class="reveal m-5 flex-1 shadow-lg px-5" style="--animation-delay: 4;" animationDelay="3" logo="/assets/geosignum.jpeg" title="Software Engineer" info="2019-2020, Netherlands"/>
+        <MyExperience class="reveal m-5 flex-1 shadow-lg px-5" style="--animation-delay: 5;" animationDelay="4" logo="/assets/roketsan.png" title="Electrical Engineer Intern" info="Summer 2018, Turkey"/>
+        <MyExperience class="reveal m-5 flex-1 shadow-lg px-5" style="--animation-delay: 6;" animationDelay="5" logo="/assets/vodafone.png" title="Software Engineer Intern" info="Summer 2017, Germany"/>
       </div>
       <h1 class="reveal mt-10 dark:text-white dark:bg-slate-800" style="--animation-delay: 7;">Education</h1>
-      <div class="flex flex-wrap flex-grow justify-evenly sm:w-1/3 dark:text-white dark:bg-slate-800">
-        <MyExperience class="reveal shadow-lg" style="--animation-delay: 8;" animationDelay="1" logo="/assets/tudelft.png" title="MSc. Computer Engineering" info="2019-2021, Netherlands"/>
-        <MyExperience class="reveal shadow-lg" style="--animation-delay: 9;" animationDelay="2" logo="/assets/metu.png" title="BSc. Electrical and Electronics Engineering" info="2014-2019, Turkey"/>
+      <div class="flex flex-wrap justify-evenly sm:w-1/3 dark:text-white dark:bg-slate-800">
+        <MyExperience class="reveal m-5 flex-1 shadow-lg" style="--animation-delay: 8;" animationDelay="1" logo="/assets/tudelft.png" title="MSc. Computer Engineering" info="2019-2021, Netherlands"/>
+        <MyExperience class="reveal m-5 flex-1 shadow-lg" style="--animation-delay: 9;" animationDelay="2" logo="/assets/metu.png" title="BSc. Electrical and Electronics Engineering" info="2014-2019, Turkey"/>
       </div>
     </div>
   </div>
@@ -98,7 +98,7 @@ export default {
   .reveal {
     transform: translateX(-100%);
     opacity: 0;
-    transition: transform .2s ease-out;
+    transition: transform .5s ease-out;
   }
 
 .reveal.active {

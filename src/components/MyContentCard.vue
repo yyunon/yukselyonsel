@@ -1,5 +1,5 @@
 <template>
-    <div class="m-4 w-80 content-container" :style="cssProps" @click="changeStateWithView(blogI)">
+    <div class="m-4 w-80 content-container shadow p-5" :style="cssProps" @click="changeStateWithView(blogI)">
       <div class="content h-full w-auto">
         <router-link class="flex flex-col justify-between h-full w-auto" :to="{name: 'blogView'}">
           <div>
@@ -74,7 +74,7 @@ export default {
 <style lang="scss">
 .content-container {
   animation: slide-in-opaque;
-  animation-delay: calc(1s + .1s * var(--animation-delay));
+  animation-delay: calc(0.5s + .1s * var(--animation-delay));
   animation-duration: .3s;
   animation-fill-mode: backwards;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="content-container flex flex-1 m-auto flex-col sm:m-auto w-52 text-center items-center justify-center" :style="cssProps">
+  <div class="content-container flex flex-col w-52 text-center items-center justify-center" :style="cssProps">
     <div class="p-5 flex flex-col justify-center">
       <div class="p-auto">
         <img class="object-scale-down justify-center m-auto h-40 w-auto" :src="logo">
