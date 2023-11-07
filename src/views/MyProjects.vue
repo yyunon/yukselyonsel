@@ -26,6 +26,7 @@
         <MyProject animationDelay="3" v-bind:projectData="deepImagePrior" v-bind:summaryLength="30"/>
         <MyProject animationDelay="4" v-bind:projectData="archLudwig" v-bind:summaryLength="30"/>
         <MyProject animationDelay="5" v-bind:projectData="yim" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="6" v-bind:projectData="whatscraper" v-bind:summaryLength="30"/>
       </div>
     </div>
   </div>
@@ -123,17 +124,17 @@ export default {
                       <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
                     </a>
                     <div class="text-start w-1/2 mx-2">
-                    <a href="https://github.com/yyunon/tpch6" class="" target="_blank">
-                      <span>
-                        yyunon
-                      </span>
-                      <span class="text-gray-500">
-                        /
-                      </span>
-                      <span>
-                        tpch6
-                      </span>
-                    </a>
+                      <a href="https://github.com/yyunon/tpch6" class="" target="_blank">
+                        <span>
+                          yyunon
+                        </span>
+                        <span class="text-gray-500">
+                          /
+                        </span>
+                        <span>
+                          tpch6
+                        </span>
+                      </a>
                       <p class="text-xs text-gray-700">
                         Hardware design of TPC-H Query 6, for AWS F1 instances. It implements a query pushdown logic.
                       </p>
@@ -224,8 +225,63 @@ export default {
             I wanted to experiment with termios and shell manipulation in Rust. At that time, implementing an editor was fun idea to play with Rust. 
             `,
           sectionBody: 
-            `Please click 
-            <a href="https://github.com/yyunon/yim" class="underline" target="_blank"><span>here</span></a> for more information about it.
+            `
+            <div class="flex my-2">
+              <a href="https://github.com/yyunon/yim" class="" target="_blank">
+                <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+              </a>
+              <div class="text-start w-1/2 mx-2">
+                <a href="https://github.com/yyunon/yim" class="" target="_blank">
+                  <span>
+                    yyunon
+                  </span>
+                  <span class="text-gray-500">
+                    /
+                  </span>
+                  <span>
+                    yim
+                  </span>
+                </a>
+                <p class="text-xs text-gray-700">
+                  A recreational editor
+                </p>
+              </div>
+            </div>
+            `,
+          icons: [iconFactory.rust]
+        }
+      },
+      whatscraper() {
+        return {
+          header: "A PoC web scraper,  whatscraper",
+          sectionSummary:
+            `
+            This is an experiment to make proxied requests to websites and scrape their content for experimental purposes. 
+            `,
+          sectionBody: 
+            `
+            It is a CLI application. It makes requests to proxies and only retrieves the working ones. Afterwards, it caches them so as to save context for latter runs.
+            <div class="flex my-2">
+              <a href="https://github.com/yyunon/whatscraper" class="" target="_blank">
+                <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+              </a>
+              <div class="text-start w-1/2 mx-2">
+                <a href="https://github.com/yyunon/whatscraper" class="" target="_blank">
+                  <span>
+                    yyunon
+                  </span>
+                  <span class="text-gray-500">
+                    /
+                  </span>
+                  <span>
+                    whatscraper
+                  </span>
+                </a>
+                <p class="text-xs text-gray-700">
+                  A web scraper PoC
+                </p>
+              </div>
+            </div>
             `,
           icons: [iconFactory.rust]
         }

@@ -1,12 +1,12 @@
 <template>
-  <div class="justify-center md:h-full w-full dark:bg-slate-800">
+  <div class="justify-center md:h-full w-full dark:bg-slate-800 px-10 sm:px-0 overflow-wrap">
     <div class="relative md:min-h-full w-full dark:bg-slate-800 ">
-      <div class="sm:absolute sm:bottom-20 sm:mb-20 sm:mx-20 sm:text-4xl text-2xl">
+      <div class="sm:absolute sm:bottom-20 sm:mb-20 sm:mx-20 sm:text-4xl text-xl">
         <div> 
         hi,
         </div>
         <div>
-        I am <span class="myname sm:text-7xl text-4xl">Y&uuml;ksel</span>, 
+        I am <span class="myname sm:text-7xl text-2xl">Y&uuml;ksel</span>, 
         </div>
         <div>
         a software engineer.
