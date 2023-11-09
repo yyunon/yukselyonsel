@@ -71,7 +71,7 @@
           </ul> 
         </div>
 
-        <div class="sm:hidden z-50 fixed bottom-4 w-11/12 h-12 bg-white border border-gray-200 rounded-full mx-auto">
+        <div class="md:hidden z-50 fixed bottom-4 w-11/12 h-12 bg-white border border-gray-200 rounded-full mx-auto">
             <div class="grid h-full grid-cols-4 mx-auto font-medium">
                 <router-link class="inline-flex items-center justify-center" aria-current="page" :to="{name: 'home'}">
                     <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

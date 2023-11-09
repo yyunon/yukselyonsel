@@ -1,7 +1,7 @@
 <template>
-  <div class="justify-center md:h-full w-full dark:bg-slate-800 px-10 sm:px-0 overflow-wrap">
-    <div class="relative md:min-h-full w-full dark:bg-slate-800 ">
-      <div class="sm:absolute sm:bottom-20 sm:mb-20 sm:mx-20 sm:text-4xl text-xl">
+  <div class="justify-center h-full w-full dark:bg-slate-800 px-10 md:px-0 overflow-wrap">
+    <div class="relative min-h-full w-full dark:bg-slate-800 ">
+      <div class="absolute md:bottom-20 md:mb-20 md:mx-20 md:text-4xl text-xl">
         <div> 
         hi,
         </div>
@@ -33,7 +33,7 @@
         </div>
       </button>
     </div>
-    <div class="md:h-full w-full relative sm:px-20 sm:pt-20 dark:text-white dark:bg-slate-800" ref="me">
+    <div class="h-full w-full relative md:px-20 md:pt-20 dark:text-white dark:bg-slate-800" ref="me">
       <h1 class="reveal dark:text-white dark:bg-slate-800" style="--animation-delay: 1;">Experiences</h1>
       <div class="flex flex-wrap justify-evenly dark:text-white dark:bg-slate-800">
         <MyExperience class="reveal m-5 flex-1 shadow-lg px-5" style="--animation-delay: 2;" animationDelay="1" logo="/assets/kpn.png" title="Software Engineer" info="2022-present, Netherlands"/>
