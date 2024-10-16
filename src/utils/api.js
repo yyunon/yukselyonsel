@@ -13,10 +13,10 @@ const apiClient = axios.create({
 
 const events = {
   async get(path) {
-    return apiClient.get("https://yuksel.biz/api" + path, {timeout: 1000})
+    return apiClient.get("https://yuksel.pro/api" + path, {timeout: 1000})
   },
   async post(path, body) {
-    return apiClient.post("https://yuksel.biz/api" + path, body, {timeout: 1000})
+    return apiClient.post("https://yuksel.pro/api" + path, body, {timeout: 1000})
   }
 }
 
