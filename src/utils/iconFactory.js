@@ -48,6 +48,10 @@ const iconFactory = {
     name: "AWS",
     url: "/assets/amazonwebservices-original.svg"
   },
+  terraform: {
+    name: "Terraform",
+    url: "/assets/terraform.svg"
+  },
 };
 
 export {iconFactory}

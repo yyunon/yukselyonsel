@@ -12,8 +12,11 @@
         </p>
       </div>
       <div class="flex flex-col justify-center">
+        <MyProject animationDelay="2" v-bind:projectData="geckodriver" v-bind:summaryLength="30"/>
         <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
         <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="2" v-bind:projectData="cloudscheduler" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="2" v-bind:projectData="thuisscraper" v-bind:summaryLength="30"/>
       </div>
     </div>
     <div class="ex flex-col md:my-20 text-left w-full">
@@ -144,7 +147,7 @@ export default {
                 </div>
               </div>
             `,
-          icons: [iconFactory.cpp, iconFactory.cmake, iconFactory.c, iconFactory.amazonwebservices, iconFactory.python]
+          icons: [iconFactory.cpp, iconFactory.cmake, iconFactory.c, iconFactory.amazonwebservices, iconFactory.java]
         }
       },
       yukselyonseldotcomProject() {
@@ -284,6 +287,116 @@ export default {
             </div>
             `,
           icons: [iconFactory.java]
+        }
+      },
+      cloudscheduler() {
+        return {
+          header: "A cloud scheduler to provision Google Compute Engine in a scheduled way.",
+          sectionSummary:
+            `
+            Ever wanted to schedule Google Cloud Compute resources on timely manner and save costs. Here you can find the automated provisioning scripts written in Terraform to achieve that.
+            `,
+          sectionBody: 
+            `
+            You simply need a machine with google cloud cli, terraform and docker. The idea is that it uses pub/sub topics to provision google vms which uses the code from Google Buckets to deploy Google VMs.
+            See below the source code.
+            <div class="flex my-2">
+              <a href="https://github.com/yyunon/gcp_cloud_scheduler" class="" target="_blank">
+                <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+              </a>
+              <div class="text-start w-1/2 mx-2">
+                <a href="https://github.com/yyunon/gcp_cloud_scheduler" class="" target="_blank">
+                  <span>
+                    yyunon
+                  </span>
+                  <span class="text-gray-500">
+                    /
+                  </span>
+                  <span>
+                    gcp_cloud_scheduler
+                  </span>
+                </a>
+                <p class="text-xs text-gray-700">
+                  A google cloud scheduler template
+                </p>
+              </div>
+            </div>
+            `,
+          icons: [iconFactory.terraform]
+        }
+      },
+      thuisscraper() {
+        return {
+          header: "Ever wanted to see the restaurants in your area in Amsterdam",
+          sectionSummary:
+            `
+            A PoC to get restaurants in Amsterdam to query whatever you like. If you need to find the best thai places by peoples choice in your area code, and develop an app for it. You are looking at the correct place.
+            `,
+          sectionBody: 
+            `
+            The idea is that it scrapes web in a concurrent manner while keeping in mind of the rate limits. It saves the data in postgres server to be queried. There are 3 endpoints to query data from the server. You already need to have 
+            a server for the project.
+            Keep in mind that you need to take care of the header of the requests and proxies if you need one(Find the explanation in project readme). The project itself will not work otherwise.
+            See below the source code.
+            <div class="flex my-2">
+              <a href="https://github.com/yyunon/thuisscraper" class="" target="_blank">
+                <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+              </a>
+              <div class="text-start w-1/2 mx-2">
+                <a href="https://github.com/yyunon/thuisscraper" class="" target="_blank">
+                  <span>
+                    yyunon
+                  </span>
+                  <span class="text-gray-500">
+                    /
+                  </span>
+                  <span>
+                    thuisscraper
+                  </span>
+                </a>
+                <p class="text-xs text-gray-700">
+                    A web server that can get restaurants in Amsterdam 
+                </p>
+              </div>
+            </div>
+            `,
+          icons: [iconFactory.python]
+        }
+      },
+      geckodriver() {
+        return {
+          header: "A geckodriver wrapper written in native rust (WIP, on active development!)",
+          sectionSummary:
+            `
+            A naive webdriver implementation that will get you page you want both asyncronously and syncronously. Right now, you can only retrieve your page and save screenshot, yet the implementation is to come.
+            `,
+          sectionBody: 
+            `
+            A naive webdriver implementation that will get you page you want both asyncronously and syncronously. Right now, you can only retrieve your page and save screenshot, yet the implementation is to come.
+            See below the source code and my aimed architecture with example projects.
+            <div class="flex my-2">
+              <a href="https://github.com/yyunon/geck-in-rs" class="" target="_blank">
+                <img src="/assets/pine.png" class="w-8 h-8 md:w-16 md:h-auto border-gray-100 border-2 rounded-full">
+              </a>
+              <div class="text-start w-1/2 mx-2">
+                <a href="https://github.com/yyunon/geck-in-rs" class="" target="_blank">
+                  <span>
+                    yyunon
+                  </span>
+                  <span class="text-gray-500">
+                    /
+                  </span>
+                  <span>
+                    geck-in-rs
+                  </span>
+                </a>
+                <p class="text-xs text-gray-700">
+                    A naive Firefox webdriver wrapper for geckodriver  
+                </p>
+              </div>
+            </div>
+            `,
+          icons: [iconFactory.rust]
         }
       },
   }

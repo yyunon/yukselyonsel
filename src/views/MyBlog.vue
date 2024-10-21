@@ -15,7 +15,7 @@
     <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
 
     <div v-show="error">
-      Sorry :(, server is down. Please try again in 30 min.
+      Sorry :(, server is down. Please refresh first ,and if it doesn't work, try again in 30 min.
     </div>
 
     <div class="flex p-10">
