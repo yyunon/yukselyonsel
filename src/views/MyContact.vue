@@ -49,6 +49,7 @@ export default {
   methods: {
     async submit() {
       await this.sendContactMessage(this.contactInfo);
+      await this.sendContactMessage(this.contactInfo);
     },
     async sendContactMessage(body) {
       try {
