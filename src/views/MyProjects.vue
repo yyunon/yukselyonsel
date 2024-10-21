@@ -12,11 +12,11 @@
         </p>
       </div>
       <div class="flex flex-col justify-center">
-        <MyProject animationDelay="2" v-bind:projectData="geckodriver" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="0" v-bind:projectData="geckodriver" v-bind:summaryLength="30"/>
         <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
         <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
-        <MyProject animationDelay="2" v-bind:projectData="cloudscheduler" v-bind:summaryLength="30"/>
-        <MyProject animationDelay="2" v-bind:projectData="thuisscraper" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="3" v-bind:projectData="cloudscheduler" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="4" v-bind:projectData="thuisscraper" v-bind:summaryLength="30"/>
       </div>
     </div>
     <div class="ex flex-col md:my-20 text-left w-full">
@@ -26,10 +26,10 @@
         </p>
       </div>
       <div class="flex flex-col justify-center">
-        <MyProject animationDelay="3" v-bind:projectData="deepImagePrior" v-bind:summaryLength="30"/>
-        <MyProject animationDelay="4" v-bind:projectData="archLudwig" v-bind:summaryLength="30"/>
-        <MyProject animationDelay="5" v-bind:projectData="yim" v-bind:summaryLength="30"/>
-        <MyProject animationDelay="6" v-bind:projectData="whatscraper" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="5" v-bind:projectData="deepImagePrior" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="6" v-bind:projectData="archLudwig" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="7" v-bind:projectData="yim" v-bind:summaryLength="30"/>
+        <MyProject animationDelay="8" v-bind:projectData="whatscraper" v-bind:summaryLength="30"/>
       </div>
     </div>
   </div>
