@@ -1,6 +1,6 @@
 <template>
-  <div class="single-project p-5 font-xs" :style="cssProps" v-on:click="toggleSection">
-    <h5 class="h5">
+  <div class="single-project p-5 font-xs " :style="cssProps" v-on:click="toggleSection">
+    <h5 class="h5 my-5">
       {{ projectData.header }} 
       <div>
         <span class="icon-container" v-for="(item, i) in projectData.icons" :key="i">
@@ -11,10 +11,12 @@
     <div class="project-container">
       <div class="sectionHeader">
         {{ projectData.sectionSummary }}
-        <span class="toggleIcon" id="toggleIcon" style="text-" v-show="!showSection">{{toggleIcon}}</span> 
-          <span class="sectionBody" v-show="showSection">
+        <span class="toggleIcon" id="toggleIcon" style="text-" v-if="!showSection">{{toggleIcon}}</span> 
+        <Transition name="fade" mode="out-in">
+          <span class="sectionBody" v-if="showSection">
             <MyDynComp :content="projectData.sectionBody"/>
           </span>
+        </Transition>
       </div>
     </div>
   </div>
@@ -66,7 +68,10 @@ export default {
 
 <style lang="scss">
   .single-project {
+    box-shadow: .5px .5px .5px .5px rgb(131, 131, 131);
     text-align: center;
+    width: 100%;
+    height: 100%;
     animation: slide-in-opaque;
     animation-delay: calc(var(--animation-delay) * .2s);
     animation-duration: .3s;
@@ -78,8 +83,12 @@ export default {
   }
   .single-project:hover {
     //margin: 2px;
-    box-shadow: 3px 3px 3px rgba(131, 131, 131, 0.5);
-    transition: .1s ease all;
+    box-shadow: 2px 2px 2px 2px rgba(131, 131, 131, 0.5);
+    transition: .4s ease all;
+    cursor: pointer;
+  }
+  .project-container {
+    transition: 1 ease all;
   }
 
   @keyframes slide-in-opaque {

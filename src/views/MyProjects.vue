@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col md:my-37 px-5 text-center w-full scroll-smooth">
-    <div class="flex flex-col md:my-20 text-left w-full">
-      <div class="w-full align-center italic">
-        <p class="reveal">
+    <div class="flex flex-col md:my-20 w-full">
+      <div class="w-full align-center italic my-10">
+        <p class="reveal text-left">
           Below, you can see the chosen projects of my mine. I choose them due to their scope and duration.
           Please check my 
           <a href="https://github.com/yyunon" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" target="_blank">
@@ -11,7 +11,7 @@
           for the rest of my contributions and projects!
         </p>
       </div>
-      <div class="flex flex-col justify-center">
+      <div class="grid md:grid-cols-3 justify-center items-center gap-5">
         <MyProject animationDelay="0" v-bind:projectData="geckodriver" v-bind:summaryLength="30"/>
         <MyProject animationDelay="1" v-bind:projectData="fpgaProject" v-bind:summaryLength="30"/>
         <MyProject animationDelay="2" v-bind:projectData="yukselyonseldotcomProject" v-bind:summaryLength="30"/>
@@ -19,13 +19,13 @@
         <MyProject animationDelay="4" v-bind:projectData="thuisscraper" v-bind:summaryLength="30"/>
       </div>
     </div>
-    <div class="ex flex-col md:my-20 text-left w-full">
-      <div class="w-full align-center italic">
-        <p class="reveal">
+    <div class="flex flex-col md:my-10 w-full">
+      <div class="w-full align-center italic my-10">
+        <p class="reveal text-left">
           Some of my archived and small projects or experiments are below.
         </p>
       </div>
-      <div class="flex flex-col justify-center">
+      <div class="grid md:grid-cols-3 justify-center items-center gap-5">
         <MyProject animationDelay="5" v-bind:projectData="deepImagePrior" v-bind:summaryLength="30"/>
         <MyProject animationDelay="6" v-bind:projectData="archLudwig" v-bind:summaryLength="30"/>
         <MyProject animationDelay="7" v-bind:projectData="yim" v-bind:summaryLength="30"/>
@@ -372,7 +372,6 @@ export default {
             `,
           sectionBody: 
             `
-            A naive webdriver implementation that will get you page you want both asyncronously and syncronously. Right now, you can only retrieve your page and save screenshot, yet the implementation is to come.
             See below the source code and my aimed architecture with example projects.
             <div class="flex my-2">
               <a href="https://github.com/yyunon/geck-in-rs" class="" target="_blank">
