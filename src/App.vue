@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col h-screen w-screen scroll-smooth dark:text-white dark:bg-slate-800">
     <MyNav />
-    <div class="relative grow dark:bg-slate-800">
+    <div class="grow dark:bg-slate-800 z-1">
       <router-view />
     </div>
   </div>

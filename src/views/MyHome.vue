@@ -1,6 +1,6 @@
 <template>
   <div class="justify-center h-full w-full dark:bg-slate-800 px-10 md:px-0 overflow-wrap">
-    <div class="relative min-h-full w-full dark:bg-slate-800 ">
+    <div class="min-h-full w-full dark:bg-slate-800 ">
       <div class="absolute md:bottom-20 md:mb-20 md:mx-20 md:text-4xl text-xl">
         <div> 
         hi,
