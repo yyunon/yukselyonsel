@@ -19,9 +19,9 @@
     </div>
   </button>
 
-  <div tabindex="-1" v-if="showSection" class="fixed overflow-y-auto overflow-x-hidden top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative mx-auto text-xxl top-1/4 p-4 w-full max-w-6xl max-h-full z-0">
-      <div :id="'modal_' + projectData.name"  class="inline-flex flex-col p-10 bg-white rounded-lg shadow dark:bg-gray-700 z-0" >
+  <div id="modalbgbg" tabindex="-1" v-if="showSection" class="animate_modal fixed overflow-y-auto overflow-x-hidden top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div :id="'modal_' + projectData.name" class="relative mx-auto text-xxl top-1/4 p-4 w-full max-w-6xl max-h-full z-0">
+      <div  class="inline-flex flex-col p-10 bg-white rounded-lg shadow dark:bg-gray-700 z-0" >
         <div class="bg-white rounded-lg shadow dark:bg-gray-700">
           <div class="absolute bg-orange-100 dark:bg-red-500 top-2 left-2 px-1 py-.5" >
             {{ projectData.label }}
@@ -79,13 +79,9 @@
 
   // eslint-disable-next-line
   const handleClick = (event) => {
-    console.log(event.target.parentNode);
     const card = document.getElementById(cardName);
     const modal = document.getElementById(modalName);
     const blurits = document.querySelectorAll(".blurme");
-    console.log(card);
-    console.log(modal);
-    //if(modal && !modal.contains(event.target.parentNode.id)){
     if(card && card.contains(event.target.parentNode)){
       showSection.value = true;
       blurits.forEach((blurit) => {
@@ -96,7 +92,6 @@
       blurits.forEach((blurit) => {
         blurit.style.filter = "none";
       });
-
     }
   };
 
@@ -123,12 +118,39 @@
     animation-delay: calc(var(--animation-delay) * .2s);
     animation-duration: .3s;
     animation-fill-mode: backwards;
-
   }
   .single-project:hover {
     //margin: 2px;
     box-shadow: 1px 1px 1px 1px rgba(131, 131, 131, 0.5);
     transition: .4s ease all;
+  }
+
+  .animate_modal{
+    animation: smooth-appear 1s ease forwards;
+  }
+  @keyframes smooth-appear {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to{
+      transform: translateY(0%);
+      opacity:1;
+    }
+  }
+
+  .animate_modal_on_leave{
+    animation: smooth-appear 1s ease forwards;
+  }
+  @keyframes smooth-disappear {
+    from {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+    to{
+      transform: translateY(-100%);
+      opacity: 0;
+    }
   }
 
   @keyframes slide-in-opaque {
