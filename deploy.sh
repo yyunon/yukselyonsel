@@ -9,6 +9,9 @@ npm run build
 # navigate into the build output directory
 cd dist
 
+# Hash hack
+cp index.html 404.html
+
 # if you are deploying to a custom domain
 echo 'http://yukselyonsel.com' > CNAME
 
